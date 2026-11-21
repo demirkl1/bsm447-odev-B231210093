@@ -78,7 +78,7 @@ Normalize edilmiş kayıt şu biçimde olacak: `{ id, position, name, nationalit
 
 ### Kod kuralları
 - Kod basit ve okunabilir olmalı. **Her satır sözlü olarak açıklanabilmeli** (kontrolde soruluyor). Gereksiz soyutlama ve kütüphane eklenmemeli.
-- Arama **büyük/küçük harfe duyarsız** olmalı (`toLocaleLowerCase('tr-TR')` ile karşılaştırma).
+- Arama **büyük/küçük harfe duyarsız** olmalı: `toLocaleLowerCase('tr-TR')` ile küçültülüp `ı` → `i` yapılır. Takım adları İngilizce olduğu için bu gerekli; yoksa "WILLIAMS" aranınca "wıllıams" olur ve sonuç bulunamaz.
 - `FlatList` içinde `keyExtractor={item => item.id}` olmalı.
 - Paket eklemek için her zaman `npx expo install <paket>` kullanılır. Paketler **Expo Go ile uyumlu** olmalı, native modül gerektiren paket eklenmemeli.
 - Yükleniyor durumu (`ActivityIndicator`) ve hata durumu ("Bağlantı yok" + "Tekrar dene") baştan eklenmeli. Ek 3'teki görev 20 ve 21 için hazırlık olur.
